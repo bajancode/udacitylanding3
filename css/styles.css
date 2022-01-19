@@ -1,0 +1,17 @@
+html {
+    scroll-behavior: smooth;
+}
+
+h1 {
+    padding: 3em;
+}
+
+section {
+    padding: 2em 1.5em;
+    margin-right: 40%;
+    font-size: 1.25rem;
+}
+
+.active-class {
+    background: red;
+}

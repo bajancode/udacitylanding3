@@ -4,10 +4,15 @@ html {
 
 h1 {
     padding: 3em;
+    font-family: sans-serif;
+}
+
+h2 {
+    font-family: sans-serif;
 }
 
 section {
-    padding: 2em 1.5em;
+    padding: 3em 2.5em;
     margin-right: 40%;
     font-size: 1.25rem;
 }

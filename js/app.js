@@ -48,11 +48,13 @@ document.addEventListener('scroll', function () {
         section.classList.remove("active-class")
 
         //The intent here is to also add active-class to the navigation menu items so they are highlighted if in viewport
-        //runs 4-8 times, is it becuase it's almost like a nested loop?
         for(let item of listItems) {
-            section.classList.contains("active-class") ? 
-            item.classList.add("active-class") : 
-            item.classList.remove("active-class") 
+            let current = document.getElementsByClassName("active-class")
+            if(current.length > 0) {
+                current[0].className = current[0].className.replace("active-class", "")
+            }
+            item.className += "active-class"
+
         }
 
 }})

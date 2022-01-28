@@ -2,6 +2,10 @@ html {
     scroll-behavior: smooth;
 }
 
+/* main {
+    padding: 16px;
+} */
+
 h1 {
     padding: 3em;
     font-family: sans-serif;
@@ -20,3 +24,30 @@ section {
 .active-class {
     background: red;
 }
+
+#nav_list {
+    display: flex;
+    justify-content: flex-end;
+}
+
+li {
+    font-size: 2rem;
+    list-style-type: none;
+    margin-right: 0.25em;
+}
+
+li:hover {
+    text-shadow: 1px 1px grey;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+/* Might make it jump less when scrolling https://www.w3schools.com/howto/howto_js_navbar_sticky.asp  */
+
+/* .sticky + main {
+    padding-top: 60px;
+} */

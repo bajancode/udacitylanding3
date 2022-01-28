@@ -1,7 +1,10 @@
+const navbar = document.getElementById("navbar")
 const navList = document.getElementById("nav_list");
 const sections = Array.from(document.getElementsByTagName("section"));
 const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
 const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+// let listItems = Array.from(document.getElementsByTagName("li"))
+
 
 //Helper Functions
 
@@ -21,7 +24,7 @@ function isInViewport(element) {
 
 //Formats section ids for nav bar
 function formatId(str) {
-    let spacedString = str.slice(0,-1) + " " + str.slice(-1)
+    let spacedString = str.slice(0,-1) + " " + str.slice(-1);
     return spacedString.toUpperCase()
  }
 
@@ -35,30 +38,39 @@ function makeLi(sections) {
     }
 }
 
-makeLi(sections)
+makeLi(sections);
 
-let listItems = Array.from(document.getElementsByTagName("li"))
 
-//On scroll, adds active-class if section is in viewport
+//Makes the nav-bar stick to top of the page
+window.onscroll = function() {
+    stickyNav()
+};
+
+//Position of the navbar
+const sticky = navbar.offsetTop;
+
+//Add sticky class to navbar when reaching scroll position, and removes when you leave scroll
+function stickyNav() {
+    if (window.pageYOffset >= sticky) {
+      navbar.classList.add("sticky")
+    } else {
+      navbar.classList.remove("sticky");
+    }
+  }
+
+//On scroll, adds active-class to section and nav item if section is in viewport
 document.addEventListener('scroll', function () {
     for(let i=0; i < sections.length; i++) {
         let section = sections[i];
-        isInViewport(section) ? 
-        section.classList.add("active-class") :
-        section.classList.remove("active-class")
 
-        //The intent here is to also add active-class to the navigation menu items so they are highlighted if in viewport
-        for(let item of listItems) {
-            let current = document.getElementsByClassName("active-class")
-            if(current.length > 0) {
-                current[0].className = current[0].className.replace("active-class", "")
-            }
-            item.className += "active-class"
-
+        if (isInViewport(section)) {
+            section.classList.add("active-class");
+            document.querySelector(`[data=${section.id}]`).classList.add("active-class");
+        } else {
+            section.classList.remove("active-class");
+            document.querySelector(`[data=${section.id}]`).classList.remove("active-class")
         }
-
 }})
-
 
 
 

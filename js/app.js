@@ -3,8 +3,6 @@ const navList = document.getElementById("nav_list");
 const sections = Array.from(document.getElementsByTagName("section"));
 const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
 const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
-// let listItems = Array.from(document.getElementsByTagName("li"))
-
 
 //Helper Functions
 
@@ -27,6 +25,7 @@ function formatId(str) {
     let spacedString = str.slice(0,-1) + " " + str.slice(-1);
     return spacedString.toUpperCase()
  }
+
 
 //Makes navigation bar <li> from section id names
 function makeLi(sections) {
@@ -65,10 +64,10 @@ document.addEventListener('scroll', function () {
 
         if (isInViewport(section)) {
             section.classList.add("active-class");
-            document.querySelector(`[data=${section.id}]`).classList.add("active-class");
+            document.querySelector(`[data=${section.id}]`).classList.add("active-nav");
         } else {
             section.classList.remove("active-class");
-            document.querySelector(`[data=${section.id}]`).classList.remove("active-class")
+            document.querySelector(`[data=${section.id}]`).classList.remove("active-nav")
         }
 }})
 

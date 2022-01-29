@@ -1,0 +1,24 @@
+{
+  "name": "landing-page",
+  "version": "1.0.0",
+  "description": "This page was made to fulfill the Udacity Front End NanoDegree second project, it's very basic and this version is very minimal. The focus is on adding/removing active states dynamically.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --ext .js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bajancode/udacitylanding3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bajancode/udacitylanding3/issues"
+  },
+  "homepage": "https://github.com/bajancode/udacitylanding3#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^8.8.0"
+  }
+}

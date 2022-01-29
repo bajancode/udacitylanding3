@@ -2,9 +2,9 @@ html {
     scroll-behavior: smooth;
 }
 
-/* main {
-    padding: 16px;
-} */
+body {
+    background-color: #9fd5e9;
+}
 
 h1 {
     padding: 3em;
@@ -16,13 +16,18 @@ h2 {
 }
 
 section {
-    padding: 3em 2.5em;
+    padding: 1.5em 2.5em;
     margin-right: 40%;
     font-size: 1.25rem;
 }
 
 .active-class {
-    background: red;
+    background: lightgoldenrodyellow;
+    opacity: 0.8
+}
+
+.active-nav {
+    font-weight: bold;
 }
 
 #nav_list {
@@ -31,13 +36,13 @@ section {
 }
 
 li {
-    font-size: 2rem;
+    font-size: 1rem;
     list-style-type: none;
-    margin-right: 0.25em;
+    margin-right: 0.5em;
 }
 
 li:hover {
-    text-shadow: 1px 1px grey;
+    font-weight: bold;
 }
 
 .sticky {
@@ -45,9 +50,3 @@ li:hover {
     top: 0;
     width: 100%;
 }
-
-/* Might make it jump less when scrolling https://www.w3schools.com/howto/howto_js_navbar_sticky.asp  */
-
-/* .sticky + main {
-    padding-top: 60px;
-} */

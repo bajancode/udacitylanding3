@@ -1,6 +1,9 @@
 const navbar = document.getElementById("navbar")
 const navList = document.getElementById("nav_list");
 const sections = Array.from(document.getElementsByTagName("section"));
+//Position of the navbar
+const sticky = navbar.offsetTop;
+
 
 //Helper Functions
 
@@ -43,8 +46,6 @@ window.onscroll = function() {
     stickyNav()
 };
 
-//Position of the navbar
-const sticky = navbar.offsetTop;
 
 //Add sticky class to navbar when reaching scroll position, and removes when you leave scroll
 function stickyNav() {
@@ -70,4 +71,57 @@ document.addEventListener('scroll', function () {
 }})
 
 
+//When clicking a nav item, scrolls smoothly to that position
 
+let lis = Array.from(document.getElementsByTagName("li"))
+console.log(lis)
+
+
+function clickLi(lis){
+    lis.forEach(li => {
+    // console.log(li) 
+    li.addEventListener("click", function(e) {
+        e.preventDefault();
+        console.log("hi")
+        li.scrollIntoView({
+            behavior: "smooth"
+        })
+
+    }
+    )
+})}
+
+clickLi(lis)
+
+
+
+// const clickLi = lis.forEach(li => {
+//     console.log(li) 
+//     li.addEventListener("click", function(e) {
+//         e.preventDefault();
+
+//         // console.log("hi")
+//         li.scrollIntoView({
+//             behavior: "smooth"
+//         })
+
+//     }
+//     )
+// })
+
+
+
+// const clickLi = lis.forEach(li => {
+//     console.log(li) 
+//     li.addEventListener("click", function(e) {
+//         e.preventDefault();
+
+//         console.log("hi")
+//         li.scrollTo({
+//             top: 1000,
+//             left: 1000,
+//             behavior: "smooth"
+//         })
+//     }
+//     )
+// })

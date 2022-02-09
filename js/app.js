@@ -79,49 +79,21 @@ console.log(lis)
 
 function clickLi(lis){
     lis.forEach(li => {
-    // console.log(li) 
     li.addEventListener("click", function(e) {
         e.preventDefault();
-        console.log("hi")
-        li.scrollIntoView({
-            behavior: "smooth"
-        })
+        //gets the child element from the li which contains the identifying info
+        const child = li.querySelector("a");
+        //gets just the text from the href without the # so we can compare it to the section id
+        const hrefText = child.href.split("#", 2)[1];
 
+    for(let section of sections) {
+        if (section.id === hrefText) {
+            section.scrollIntoView({
+                behavior: "smooth"
+            })
+        }
     }
-    )
+    })
 })}
 
 clickLi(lis)
-
-
-
-// const clickLi = lis.forEach(li => {
-//     console.log(li) 
-//     li.addEventListener("click", function(e) {
-//         e.preventDefault();
-
-//         // console.log("hi")
-//         li.scrollIntoView({
-//             behavior: "smooth"
-//         })
-
-//     }
-//     )
-// })
-
-
-
-// const clickLi = lis.forEach(li => {
-//     console.log(li) 
-//     li.addEventListener("click", function(e) {
-//         e.preventDefault();
-
-//         console.log("hi")
-//         li.scrollTo({
-//             top: 1000,
-//             left: 1000,
-//             behavior: "smooth"
-//         })
-//     }
-//     )
-// })

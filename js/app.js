@@ -10,14 +10,9 @@ const sticky = navbar.offsetTop;
 //Checks if an element is in the viewport, see ReadMe for sources
 function isInViewport(element) {
     const rectangle = element.getBoundingClientRect();
-    return (
-        //If the element is in the viewport, its top and left are always greater than or equal zero
-        rectangle.top >= 0 &&
-        rectangle.left >= 0 &&
-        // //If element is in viewport, its distance from the right is less than or equal to the width of the viewport
-        rectangle.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        // //If element is in viewport, its distance from the bottom is less than or equal to the height of the viewport
-        rectangle.right <= (window.innerWidth || document.documentElement.clientWidth)
+    return (    
+        rectangle.top <= 150 && 
+        rectangle.bottom >= 150
     );
 }
 

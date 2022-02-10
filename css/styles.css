@@ -49,4 +49,5 @@ li:hover {
     top: 0;
     width: 100%;
     background: lightgoldenrodyellow;
+    z-index: 1;
 }
